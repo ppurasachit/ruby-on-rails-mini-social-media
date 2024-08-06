@@ -32,4 +32,4 @@ To run the test suite, execute the following command:
 
 ```
 docker-compose run web bundle exec rspec
-```# ruby-on-rails-mini-social-media
+```
