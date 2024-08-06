@@ -33,3 +33,15 @@ To run the test suite, execute the following command:
 ```
 docker-compose run web bundle exec rspec
 ```
+
+## Remark 
+you can see sample data in folder name "seed"
+
+## example links
+
+```
+ http://localhost:3000/users
+ http://localhost:3000/users/66b215c2f7c518fced355881/posts
+ http://localhost:3000/posts
+ 
+```
