@@ -1,0 +1,29 @@
+version: '3.9'
+services:
+  db:
+    image: mongo:5
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: social_media
+
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
+
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  mongo-data:
